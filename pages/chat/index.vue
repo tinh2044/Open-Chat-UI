@@ -9,7 +9,7 @@ const onModelChanged = (newModel) => {
 </script>
 
 <template>
-  <div class="flex flex-col w-full">
-    <models @model-changed="onModelChanged" />
+  <div class="flex flex-1">
+      <chat :model="model" />
   </div>
 </template>
