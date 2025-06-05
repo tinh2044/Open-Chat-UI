@@ -56,9 +56,9 @@ export const loadOllamaInstructions = () => {
   }
 }
 
-export const saveOllamaInstruction = (name: string, instruction: string) => {
+export const saveOllamaInstruction = (name, instruction) => {
   const instructions = loadOllamaInstructions();
-  const existing = instructions.find((i: { name: string; instruction: string }) => i.name === name);
+  const existing = instructions.find((i) => i.name === name);
   if (existing) {
     existing.instruction = instruction;
   } else {

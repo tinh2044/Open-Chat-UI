@@ -25,7 +25,7 @@ export default defineEventHandler(async (event) => {
     const llm = new ChatOpenAI({ modelName: "gpt-3.5-turbo", temperature: 0 });
 
     const ragChainFromDocs = RunnableSequence.from([
-      RunnablePassthrough.assign({ context: (input: any) => formatDocumentsAsString(input.context) }),
+      RunnablePassthrough.assign({ context: (input) => formatDocumentsAsString(input.context) }),
       prompt,
       llm,
       new StringOutputParser()
